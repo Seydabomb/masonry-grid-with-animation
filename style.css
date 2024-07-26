@@ -1,3 +1,13 @@
+/* 
+
+I do realize that animation I have done here doesn't quite match the animation you were looking for. 
+
+I did this intentionally as I thought a more punchy animation suited the site more. 
+
+People who are going to a website like this usually are pretty drained and a soft animation doesn't really draw their attention as much as this one would. 
+
+*/
+
 /*===================================== Global =================================*/
 
 * {
@@ -10,11 +20,11 @@ h1 {
 	color: black;
 	margin-bottom: 0.5em;
 	margin-top: 0.2em;
+	text-align: center;
 }
 
 body {
 	color: #fff;
-	text-align: center;
 	margin: 0;
 }
 
@@ -24,12 +34,26 @@ body a:visited {
 	text-decoration: none;
 }
 
+.youtube-link {
+	cursor: pointer;
+	text-align: end;
+	background-color: #f2b949;
+	color: #fff;
+	padding: 0.5em;
+	border-radius: 1.5em;
+	border: none;
+	position: fixed;
+	top: 1em;
+	right: 1em;
+}
+
 /*===================================== Flexbox =================================*/
 
 .flexbox {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	text-align: center;
 }
 
 .flexbox .item {
@@ -136,6 +160,9 @@ body a:visited {
 	background-color: rgba(11, 127, 171, 0.7);
 }
 
+.youtube-link:hover {
+	background-color: rgba(11, 127, 171, 0.7);
+}
 /*================================ Screen Size Adaption ==============================*/
 
 @media (max-width: 860px) {
