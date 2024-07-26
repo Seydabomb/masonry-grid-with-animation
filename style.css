@@ -28,12 +28,6 @@ body {
 	margin: 0;
 }
 
-body a,
-body a:visited {
-	color: #ccc;
-	text-decoration: none;
-}
-
 .youtube-link {
 	cursor: pointer;
 	text-align: end;
