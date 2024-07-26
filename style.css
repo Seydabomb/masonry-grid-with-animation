@@ -1,0 +1,100 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+h1 {
+	color: black;
+	margin-bottom: 0.5em;
+	margin-top: 0.2em;
+}
+
+body {
+	color: #fff;
+	text-align: center;
+	margin: 0;
+}
+
+body a,
+body a:visited {
+	color: #ccc;
+	text-decoration: none;
+}
+
+.flexbox {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.flexbox .item {
+	position: relative;
+	width: calc(50% - 1em);
+	margin: 0.5em;
+	display: flex;
+	justify-content: center;
+}
+
+.flexbox .item img {
+	width: 100%;
+	display: block;
+}
+
+.flexbox .item .title {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 30px;
+	text-shadow: 0 0 8px rgba(0, 0, 0, 0.48);
+	background-color: rgba(11, 127, 171, 0.48);
+	width: 100%;
+	text-align: center;
+	transition: opacity 0.8s;
+}
+
+.flexbox .item .more-info {
+	display: none;
+	position: absolute;
+	bottom: 30%;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 0.7em 1.5em;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	font-size: 16px;
+	border-radius: 5px;
+}
+
+.flexbox .item .more-info.button {
+	bottom: 30%;
+	padding: 0.7em 1.5em;
+	background-color: #f2b949 !important;
+	border: none;
+	cursor: pointer;
+	font-size: 16px;
+	border-radius: 5px;
+}
+
+.flexbox .item:hover .title {
+	opacity: 0;
+}
+
+.flexbox .item:hover .more-info {
+	display: block;
+	transition: opacity 0.8s;
+}
+
+@media (max-width: 860px) {
+	.flexbox .item {
+		width: calc(50% - 1em);
+	}
+}
+
+@media (max-width: 667px) {
+	.flexbox .item {
+		width: calc(100% - 1em);
+	}
+}
