@@ -1,3 +1,5 @@
+/*===================================== Global =================================*/
+
 * {
 	box-sizing: border-box;
 	padding: 0;
@@ -22,6 +24,8 @@ body a:visited {
 	text-decoration: none;
 }
 
+/*===================================== Flexbox =================================*/
+
 .flexbox {
 	display: flex;
 	flex-wrap: wrap;
@@ -34,11 +38,13 @@ body a:visited {
 	margin: 0.5em;
 	display: flex;
 	justify-content: center;
+	overflow: hidden;
 }
 
 .flexbox .item img {
 	width: 100%;
 	display: block;
+	transition: all 0.3s;
 }
 
 .flexbox .item .title {
@@ -51,41 +57,86 @@ body a:visited {
 	background-color: rgba(11, 127, 171, 0.48);
 	width: 100%;
 	text-align: center;
-	transition: opacity 0.8s;
+	opacity: 1;
+	transition: top 0.3s ease-out, opacity 0.3s ease-out; /* Title transitions out */
 }
 
 .flexbox .item .more-info {
-	display: none;
 	position: absolute;
-	bottom: 30%;
-	left: 50%;
-	transform: translateX(-50%);
 	padding: 0.7em 1.5em;
 	color: #fff;
 	border: none;
 	cursor: pointer;
 	font-size: 16px;
 	border-radius: 5px;
+	opacity: 1;
 }
 
-.flexbox .item .more-info.button {
-	bottom: 30%;
-	padding: 0.7em 1.5em;
-	background-color: #f2b949 !important;
-	border: none;
-	cursor: pointer;
-	font-size: 16px;
-	border-radius: 5px;
+.flexbox .item button.more-info {
+	background-color: #f2b949;
+	bottom: -40%;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: bottom 0.6s ease-out, opacity 0.6s ease-out 0.3s; /* Button slides in with delay */
 }
+
+.flexbox .item h2.more-info {
+	font-size: 30px;
+	text-shadow: 0 0 8px rgba(0, 0, 0, 0.48);
+	bottom: -60%;
+	left: 50%;
+	width: 100%;
+	text-align: center;
+	transform: translateX(-50%);
+	transition: bottom 0.6s ease-out, opacity 0.6s ease-out 0.2s; /* H2 slides in with delay */
+}
+
+.flexbox .item p.more-info {
+	font-size: 14px;
+	text-shadow: 0 0 8px rgba(0, 0, 0, 0.48);
+	bottom: -20%;
+	left: 50%;
+	width: 100%;
+	text-align: start;
+	transform: translateX(-50%);
+	transition: bottom 0.6s ease-out, opacity 0.6s ease-out; /* P slides in first */
+}
+
+/*===================================== Hover =================================*/
 
 .flexbox .item:hover .title {
+	top: 30%; /* Where the title is placed on the image */
 	opacity: 0;
 }
 
 .flexbox .item:hover .more-info {
-	display: block;
-	transition: opacity 0.8s;
+	opacity: 1;
 }
+
+.flexbox .item:hover button.more-info {
+	bottom: 50%; /* Where the button is placed on the image */
+	opacity: 1;
+}
+
+.flexbox .item:hover h2.more-info {
+	bottom: 60%; /* Where the heading is placed on the image */
+	opacity: 1;
+}
+
+.flexbox .item:hover p.more-info {
+	bottom: 10%; /* Where the paragraph is placed on the image */
+	opacity: 1;
+}
+
+.flexbox .item:hover img {
+	filter: brightness(60%);
+}
+
+.flexbox .item button:hover {
+	background-color: rgba(11, 127, 171, 0.7);
+}
+
+/*================================ Screen Size Adaption ==============================*/
 
 @media (max-width: 860px) {
 	.flexbox .item {
